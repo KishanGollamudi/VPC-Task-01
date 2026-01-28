@@ -206,7 +206,9 @@ DevOps Intern / Cloud Engineer
 
 ## Screenshots
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7dafaf32-203b-4204-9a65-4130efb2163b" />
+
 ### Testing: 
+
 <img width="1920" height="1080" alt="20" src="https://github.com/user-attachments/assets/d63bb63f-6c01-4a38-8b8f-6c46c2e145d5" />
 <img width="1920" height="1080" alt="19" src="https://github.com/user-attachments/assets/7fd8eded-750a-4080-b9c7-abc97af73290" />
 <img width="1920" height="1080" alt="18" src="https://github.com/user-attachments/assets/13f264af-3495-46ec-8b57-5bce4c07faa4" />
@@ -217,28 +219,48 @@ DevOps Intern / Cloud Engineer
 <img width="1920" height="1080" alt="13" src="https://github.com/user-attachments/assets/e6456313-bd02-4d62-810c-214b9c6036d5" />
 <img width="1920" height="1080" alt="12" src="https://github.com/user-attachments/assets/e6e84b69-386f-4f78-98d4-a926bae2bca0" />
 <img width="1920" height="1080" alt="11" src="https://github.com/user-attachments/assets/c753f435-980c-4f6d-a237-4cea74e2498e" />
+
 ### Internet Gateway: 
+
 <img width="1920" height="1080" alt="10" src="https://github.com/user-attachments/assets/60e23ced-6cda-43b0-a95a-9eeb58236823" />
+
 ### Private RT: 
+
 <img width="1920" height="1080" alt="9" src="https://github.com/user-attachments/assets/0f7ff5a2-9ace-4c1a-8c8f-4bdb3cd5a570" />
 <img width="1920" height="1080" alt="9 2" src="https://github.com/user-attachments/assets/b9f49e3b-baff-4134-b02b-1073a059a346" />
 <img width="1920" height="1080" alt="9 1" src="https://github.com/user-attachments/assets/060b8ff1-f80d-495d-8b7f-77812ac97978" />
+
 ### Public RT: 
+
 <img width="1920" height="1080" alt="8" src="https://github.com/user-attachments/assets/41af08ef-8291-4a07-94fd-e0fd6fa060a1" />
 <img width="1920" height="1080" alt="8 2" src="https://github.com/user-attachments/assets/1aa38e93-6275-4d5f-a378-6a4cbce89f3f" />
 <img width="1920" height="1080" alt="8 1" src="https://github.com/user-attachments/assets/03883f10-4e92-4fe5-9c54-9c935f88ed3f" />
+
 ### Admin Subnet
+
 <img width="1920" height="1080" alt="7" src="https://github.com/user-attachments/assets/8a91cd44-2d84-40f3-80bb-6f807b068593" />
+
 ### App Subnet
+
 <img width="1920" height="1080" alt="6" src="https://github.com/user-attachments/assets/dc505988-cd37-4d65-ba56-4f3539ebfd3d" />
+
 ### Edge Subnet: 
+
 <img width="1920" height="1080" alt="5" src="https://github.com/user-attachments/assets/a2c4bf6a-49ff-4bd8-9aec-eeff70ca7383" />
+
 ### Platform Subnet: 
+
 <img width="1920" height="1080" alt="4" src="https://github.com/user-attachments/assets/94508c79-aba9-45a7-ba9e-dcd7e64af0ee" />
+
 ### Shared Subnet: 
+
 <img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/1baa01fe-28d2-400c-9340-94ffd15502b9" />
+
 ### Web Subnet: 
+
 <img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/b4420125-ea7a-4db9-bf6a-6b50219749c6" />
+
 ### VPC: 
+
 <img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/a804b6ca-c817-4ce4-84a3-6cecc9779796" />
 
