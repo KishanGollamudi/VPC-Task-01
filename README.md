@@ -65,7 +65,7 @@ The IGW enables **controlled internet access** only for selected subnets.
 
 ## 🧭 Route Table Architecture
 
-### Public Route Table (Public-RT)
+### Public Route Table (Prod-Pub-RT)
 
 Used by Admin and Edge subnets.
 
@@ -76,7 +76,7 @@ Used by Admin and Edge subnets.
 
 ---
 
-### Private Route Table (Private-RT)
+### Private Route Table (Prod-Pvt-RT)
 
 Used by Web, App, Platform, and Shared subnets.
 
