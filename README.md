@@ -90,14 +90,14 @@ Used by Web, App, Platform, and Shared subnets.
 
 ## 🔗 Route Table Associations
 
-| Subnet          | Route Table |
-| --------------- | ----------- |
-| Admin-Subnet    | Public-RT   |
-| Edge-Subnet     | Public-RT   |
-| Web-Subnet      | Private-RT  |
-| App-Subnet      | Private-RT  |
-| Platform-Subnet | Private-RT  |
-| Shared-Subnet   | Private-RT  |
+| Subnet          | CIDR | IP Range                | Route Table |
+| --------------- | ---- | ----------------------- | ----------- |
+| Admin-Subnet    | /24  | 10.0.62.0 – 10.0.62.255 | Public-RT   |
+| Edge-Subnet     | /23  | 10.0.60.0 – 10.0.61.255 | Public-RT   |
+| Web-Subnet      | /22  | 10.0.56.0 – 10.0.59.255 | Private-RT  |
+| App-Subnet      | /21  | 10.0.48.0 – 10.0.55.255 | Private-RT  |
+| Platform-Subnet | /20  | 10.0.32.0 – 10.0.47.255 | Private-RT  |
+| Shared-Subnet   | /19  | 10.0.0.0 – 10.0.31.255  | Private-RT  |
 
 ✔ Main route table is **not used**
 
@@ -204,7 +204,6 @@ DevOps Intern / Cloud Engineer
 ---
 
 ## Screenshots 
-
 <img width="1920" height="1080" alt="20" src="https://github.com/user-attachments/assets/d63bb63f-6c01-4a38-8b8f-6c46c2e145d5" />
 <img width="1920" height="1080" alt="19" src="https://github.com/user-attachments/assets/7fd8eded-750a-4080-b9c7-abc97af73290" />
 <img width="1920" height="1080" alt="18" src="https://github.com/user-attachments/assets/13f264af-3495-46ec-8b57-5bce4c07faa4" />
