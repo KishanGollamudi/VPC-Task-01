@@ -203,7 +203,9 @@ DevOps Intern / Cloud Engineer
 
 ---
 
-## Screenshots 
+
+## Screenshots
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7dafaf32-203b-4204-9a65-4130efb2163b" />
 <img width="1920" height="1080" alt="20" src="https://github.com/user-attachments/assets/d63bb63f-6c01-4a38-8b8f-6c46c2e145d5" />
 <img width="1920" height="1080" alt="19" src="https://github.com/user-attachments/assets/7fd8eded-750a-4080-b9c7-abc97af73290" />
 <img width="1920" height="1080" alt="18" src="https://github.com/user-attachments/assets/13f264af-3495-46ec-8b57-5bce4c07faa4" />
