@@ -1,0 +1,182 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Enterprise-grade AWS VPC with unequal subnets, controlled internet access,
+  and audit-ready routing (us-east-1 compatible).
+
+Resources:
+
+  # -----------------------
+  # VPC
+  # -----------------------
+  ProdVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: Prod-VPC
+
+  # -----------------------
+  # Internet Gateway
+  # -----------------------
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: Prod-IGW
+
+  IGWAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref ProdVPC
+      InternetGatewayId: !Ref InternetGateway
+
+  # -----------------------
+  # Subnets (Largest → Smallest)
+  # -----------------------
+  SharedSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref ProdVPC
+      AvailabilityZone: us-east-1a
+      CidrBlock: 10.0.0.0/19
+      Tags:
+        - Key: Name
+          Value: Shared-Subnet
+
+  PlatformSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref ProdVPC
+      AvailabilityZone: us-east-1a
+      CidrBlock: 10.0.32.0/20
+      Tags:
+        - Key: Name
+          Value: Platform-Subnet
+
+  AppSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref ProdVPC
+      AvailabilityZone: us-east-1a
+      CidrBlock: 10.0.48.0/21
+      Tags:
+        - Key: Name
+          Value: App-Subnet
+
+  WebSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref ProdVPC
+      AvailabilityZone: us-east-1a
+      CidrBlock: 10.0.56.0/22
+      Tags:
+        - Key: Name
+          Value: Web-Subnet
+
+  EdgeSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref ProdVPC
+      AvailabilityZone: us-east-1a
+      CidrBlock: 10.0.60.0/23
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: Edge-Subnet
+
+  AdminSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref ProdVPC
+      AvailabilityZone: us-east-1a
+      CidrBlock: 10.0.62.0/24
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: Admin-Subnet
+
+  # -----------------------
+  # Route Tables
+  # -----------------------
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref ProdVPC
+      Tags:
+        - Key: Name
+          Value: Public-RT
+
+  PrivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref ProdVPC
+      Tags:
+        - Key: Name
+          Value: Private-RT
+
+  # -----------------------
+  # Routes
+  # -----------------------
+  PublicInternetRoute:
+    Type: AWS::EC2::Route
+    DependsOn: IGWAttachment
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  # -----------------------
+  # Route Table Associations
+  # -----------------------
+  AdminSubnetRouteAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref AdminSubnet
+      RouteTableId: !Ref PublicRouteTable
+
+  EdgeSubnetRouteAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref EdgeSubnet
+      RouteTableId: !Ref PublicRouteTable
+
+  WebSubnetRouteAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref WebSubnet
+      RouteTableId: !Ref PrivateRouteTable
+
+  AppSubnetRouteAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref AppSubnet
+      RouteTableId: !Ref PrivateRouteTable
+
+  PlatformSubnetRouteAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PlatformSubnet
+      RouteTableId: !Ref PrivateRouteTable
+
+  SharedSubnetRouteAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref SharedSubnet
+      RouteTableId: !Ref PrivateRouteTable
+
+Outputs:
+  VPCId:
+    Description: VPC ID
+    Value: !Ref ProdVPC
+
+  PublicRouteTableId:
+    Description: Public Route Table ID
+    Value: !Ref PublicRouteTable
+
+  PrivateRouteTableId:
+    Description: Private Route Table ID
+    Value: !Ref PrivateRouteTable
